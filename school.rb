@@ -33,6 +33,26 @@ def student_average
     chooseIndex = 0
 end
 
+def student_misses
+    puts "---------------------------------------"
+    puts "-----ALUMNOS Y SUS INASISTENCIAS: -----"
+    puts " "
+    students = read_students("students.csv")
+    students.each do |array|
+        misses_total = 0
+        array.each_with_index do |element, index|
+            if(index == 0)
+                print "#{element.upcase}:  "
+            elsif(index != 0 && element == "A")
+                misses_total += 1
+            end
+        end
+        puts "tiene #{misses_total} inasistencias"
+        puts " "
+    end
+    puts "---------------------------------------"
+    chooseIndex = 0
+end
 
 while(chooseIndex != 4)
     puts "Elija una opción"

@@ -7,6 +7,33 @@ def read_students(file_name)
     students
 end
 
+def student_average
+    puts "---------------------------------------"
+    puts "-----ALUMNOS Y SU PROMEDIO:       -----"
+    puts " "
+    students = read_students("students.csv")
+    students.each do |array|
+        grades_total = 0
+        amount = 0
+        array.each_with_index do |element, index|
+            if(element == "A")
+                element == 0
+            end
+            if(index == 0)
+                print "#{element.upcase}:  "
+            elsif(index != 0)
+                grades_total += element.to_f
+                amount += 1
+            end
+        end
+        puts grades_total / amount
+        puts " "
+    end
+    puts "---------------------------------------"
+    chooseIndex = 0
+end
+
+
 while(chooseIndex != 4)
     puts "Elija una opción"
     puts "1) Ver alumno + promedio de sus notas"
